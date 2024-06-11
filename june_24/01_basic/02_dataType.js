@@ -15,3 +15,4 @@ let users = [
 ];
 
 console.log(typeof country);
+
