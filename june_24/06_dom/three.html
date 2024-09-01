@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    div.className = "myclass"
+    div.id= Math.round(Math.random()*10+1);
+    const attributes = {
+        'name':'sanjay',
+        'data-id':'485'
+    }
+    for(key in attributes)
+    {
+        div.setAttribute(key, attributes[key])
+    }
+    div.style.color = "rwhiteed";
+    div.setAttribute("title","wrapper-section")
+    div.innerText = "Here HTML Text";
+    div.style.backgroundColor = "green"
+    div.style.padding="20px"
+    console.log(div);
+    document.body.appendChild(div)
+
+    const div1 = document.createElement('div');
+    const day = ["Monday","Tuesday","Wednesday","Thuesday","Friday","Saturday","Sunday"];
+    const color = ["red","green","pink","purple","orange","black","brown"]
+    
+    for(key in day){
+        const p = document.createElement('p')
+        p.innerText = day[key];
+        p.style.color = color[key]
+        div1.appendChild(p)
+    }
+    document.body.appendChild(div1)
+</script>
+</html>
