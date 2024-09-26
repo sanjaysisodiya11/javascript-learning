@@ -14,4 +14,5 @@ window.addEventListener('keydown', function(e){
         <td>${e.keyCode}</td>
     </tr>
 </table>`;
+
 });
