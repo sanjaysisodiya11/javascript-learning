@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img id="Google" width="200px" src="https://d1bmrxzy9arvjq.cloudfront.net/uploads/documents/2/Zx5FJ40VX21KGUtyfzO8MaGlKW33WCkfrmjUGAxP.jpg"></li>
+        <li><img id="Facebook" width="200px" src="https://d1bmrxzy9arvjq.cloudfront.net/uploads/documents/1/8zVINvMlRWsg69budY9rSvOLauASTaEvL4YYrgvI.jpg"></li>
+        <li>
+            <a href="www.instagram.com">
+                <img id="insta" width="200px" src="https://d1bmrxzy9arvjq.cloudfront.net/uploads/documents/2/Zx5FJ40VX21KGUtyfzO8MaGlKW33WCkfrmjUGAxP.jpg" alt="dummy">
+            </a>
+        </li>
+    </ul>
+</body>
+<script>
+    /* document.getElementById('Google').onclick = function(){
+        alert("123");
+    } */
+
+   /* document.getElementById('Google').addEventListener('click', function(e){
+        console.log(e);
+   },false) */
+
+   /* document.getElementById('images').addEventListener('click', function(){
+    console.log('ul click');
+   }, true) */
+
+   /* document.getElementById('Facebook').addEventListener('click', function(event){
+    console.log('Facebook click');
+    //event.stopPropagation() 
+   }, true) */ // true karne par capture phase pehle trigger hoga , false karne par bubbling phase pehle trigger hoga
+
+   // preventDefault
+   document.getElementById('insta').addEventListener('click', function(e){
+    e.preventDefault();
+   }, true)
+   
+   //type, timeStamp, defaultPrevented
+   //target, toElement , srcElement, currentTarget
+   //clientX , clientY , screenX, screenY
+   //alkey, ctrlkey,shiftkey, keyCode
+
+
+   document.querySelector("#images").addEventListener("click", function(e) {
+    console.log(e.target);
+    //console.log(e.target.parentNode)
+    console.log(e.target.tagName);
+    if(e.target.tagName==="IMG")
+    {
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+    }
+
+   }, false) // false mean bubbling phase enable hai
+</script>
+</html>

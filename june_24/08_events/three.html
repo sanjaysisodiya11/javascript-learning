@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aour code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    /* 1st way */
+    /* const sayName = function(str){
+        console.log(str,Date.now())
+    }
+    setInterval(sayName, 2000, "sanjay sisodiya") */
+
+    const sayName = function(str){
+        console.log(str,Date.now())
+    }
+
+    let setIntervalId; // Define in Global scope
+    document.querySelector("#start").addEventListener('click',function(){
+        console.log('start interval')
+        setIntervalId = setInterval(sayName, 2000, "sanjay sisodiya")
+    })
+
+    document.querySelector("#stop").addEventListener('click',function(){
+        console.log('Stop interval');
+        clearInterval(setIntervalId)
+    })
+</script>
+</html>
